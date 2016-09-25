@@ -10,7 +10,8 @@ class CPFField(models.Field):
     verbose_name = 'CPF'
     description = "A CPF instance."
 
-    __metaclass__ = models.SubfieldBase
+    # AttributeError: 'module' object has no attribute 'SubfieldBase'
+    #__metaclass__ = models.SubfieldBase
 
     def __init__(self, enable_masked_widget=True, *a, **kw):
         kw['max_length'] = 11
